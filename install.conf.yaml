@@ -11,4 +11,4 @@
 
 - shell:
     - git update-submodules
-    - vim +PlugInstall
+    - vim +PlugInstall +qa

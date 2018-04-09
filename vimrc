@@ -2,13 +2,29 @@
 
 call plug#begin('~/.vim/plugged')
 
+"Visual/aesthetic
+
 Plug 'morhetz/gruvbox'
-Plug 'airblade/vim-gitgutter'
-Plug 'vimwiki/vimwiki'
+Plug 'vim-airline/vim-airline'
 Plug 'alcesleo/vim-uppercase-sql'
-Plug 'mattn/calendar-vim'
+
+"git
+
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+"snippets/syntax stuff
+
+Plug 'vim-syntastic/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'Valloric/YouCompleteMe'
+Plug 'alfredodeza/pytest.vim'
+
+"Vimwiki
+
+Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
 
 call plug#end()
 
@@ -74,10 +90,24 @@ endfunction
 
 "Snippets config
 
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-a>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+"Syntastic config
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"UltiSnips config
+
+let g:UltiSnipsUsePythonVersion = 3
 
 "External links or something (copied from Kyle's Vimrc)
 
