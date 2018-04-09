@@ -1,0 +1,10 @@
+vim/plugged/*
+vim/init.vim
+
+vim/backup/*
+vim/swap/*
+vim/undo/*
+
+git/*
+
+common/vim/plugged/*

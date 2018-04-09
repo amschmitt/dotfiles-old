@@ -1,0 +1,14 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.vim: 
+    ~/.vimrc: 
+
+- shell:
+    - git update-submodules
+    - vim +PlugInstall
