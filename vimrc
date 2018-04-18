@@ -20,6 +20,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
 Plug 'alfredodeza/pytest.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'leafgarland/typescript-vim'
 
 "Vimwiki
 
@@ -42,7 +44,7 @@ nmap gl i<Tab><Esc>
 
 cmap w!! w !sudo tee % > /dev/null
 
-"Settings
+"Generic Settings
 
 set number
 set shiftwidth=4
@@ -61,6 +63,8 @@ set encoding=utf-8
 if !exists('g:syntax_on')
     syntax enable
 endif
+
+"Gruvbox/Theme settings
 
 set cursorline
 highlight CursorLine ctermbg=black
@@ -108,6 +112,11 @@ let g:syntastic_check_on_wq = 0
 "UltiSnips config
 
 let g:UltiSnipsUsePythonVersion = 3
+
+"PlantUML Config
+
+let g:plantuml_executable_script='java -jar ~/lib/java/plantuml.jar'
+nnoremap <c-u>m :w<CR>:make<CR>:redraw<CR>
 
 "External links or something (copied from Kyle's Vimrc)
 
